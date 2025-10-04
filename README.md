@@ -4,8 +4,7 @@ This repository contains notebooks and code snippets focused on **Object-Oriente
 It serves as a personal learning space to explore concepts like classes, objects, encapsulation, inheritance, and more through practical examples.
 
 ## Contents
-- 📒 Jupyter notebooks with explanations and practice exercises  
-- 🐍 Python scripts for quick testing of OOP concepts  
+- 📒 Jupyter notebooks with explanations and practice exercises
 - 🏗️ Small projects to apply OOP in real-world scenarios  
 
 ## Goals
