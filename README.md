@@ -16,6 +16,6 @@ It serves as a personal learning space to explore concepts like classes, objects
 Clone the repository and open the notebooks:
 
 ```bash
-git clone https://github.com/your-username/oop-learning.git
+git clone https://github.com/iagam/oop-learning.git
 cd oop-learning
 jupyter notebook
