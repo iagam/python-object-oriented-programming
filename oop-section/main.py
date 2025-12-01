@@ -9,8 +9,19 @@ from enemy import *
 # Abstarction means to hide implementation and only show necessary details to the user.
 # User doesn't need to know what's going under the hood.
 
-zombie = Enemy()
-zombie.type_of_enemy = "Zombie"
-print(zombie.talk())
-print(zombie.walk_forward())
+# zombie = Enemy()
+# zombie.type_of_enemy = "Zombie"
+# print(zombie.talk())
+# print(zombie.walk_forward())
+# print(zombie.attack())
+
+# V3 - Constructors
+zombie = Enemy("Zombie", 10, 1)
+big_zombie = Enemy("Big Zombie", 100, 10)
+
 print(zombie.attack())
+print(big_zombie.attack())
+print(
+    f"If user wants to change the Zombie to Ogre they can do that by zombie.type_of_enemy = 'Ogre'"
+)
+print("But we try not to encourage this functionality.")
