@@ -1,5 +1,4 @@
-# Create an enemy class
-
+# V1 - Introduction to OOP - Create an enemy class
 class Enemy:
 
     type_of_enemy: str
