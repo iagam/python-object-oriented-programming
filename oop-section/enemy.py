@@ -11,11 +11,45 @@
 # In the long run helps make code scalable
 # Propoagates the DRY (Don't Repeat Yourself) principle
 
+# class Enemy:
+
+#     type_of_enemy: str
+#     health_points: int = 10
+#     attack_damage: int = 1
+
+#     def talk(self):
+#         print(f"I am a {self.type_of_enemy}. Be prepared to fight.")
+
+#     def walk_forward(self):
+#         print(f"{self.type_of_enemy} moves closer to you.")
+
+#     def attack(self):
+#         print(f"{self.type_of_enemy} attacks for {self.attack_damage} damage.")
+
+# V3 - Constructors
+# 1. Default/Empty Constructors
+# 2. No Arguments Constructors
+# 3. Parameter Constructors
+
 class Enemy:
 
-    type_of_enemy: str
-    health_points: int = 10
-    attack_damage: int = 1
+    # Add parameter constructor class
+    def __init__(self, type_of_enemy: str, health_points: int, attack_damage: int):
+        self.type_of_enemy = type_of_enemy
+
+        # Explicit Runtime Check
+        if not isinstance(health_points, int):
+            raise TypeError(
+                f"health_points must be an integer, but got {type(health_points).__name__}"
+            )
+        self.health_points = health_points
+
+        # Explicit Runtime Check
+        if not isinstance(attack_damage, int):
+            raise TypeError(
+                f"attack_damage must be an integer, but got {type(attack_damage).__name__}"
+            )
+        self.attack_damage = attack_damage
 
     def talk(self):
         print(f"I am a {self.type_of_enemy}. Be prepared to fight.")
