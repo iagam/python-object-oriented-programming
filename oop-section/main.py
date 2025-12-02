@@ -60,8 +60,13 @@ from enemy import *
 # super is used to call the parent class methods or constructors
 
 from zombie import *
+from ogre import *
 
 zombie = Zombie(10, 1)
 print(zombie.get_type_of_enemy())
 print(zombie.talk())
 print(zombie.spread_disease())
+
+ogre = Ogre(20, 3)
+print(ogre.get_type_of_enemy())
+print(ogre.talk())
