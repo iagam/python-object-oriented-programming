@@ -62,11 +62,33 @@ from enemy import *
 from zombie import *
 from ogre import *
 
-zombie = Zombie(10, 1)
-print(zombie.get_type_of_enemy())
-print(zombie.talk())
-print(zombie.spread_disease())
+# zombie = Zombie(10, 1)
+# print(zombie.get_type_of_enemy())
+# print(zombie.talk())
+# print(zombie.spread_disease())
 
-ogre = Ogre(20, 3)
-print(ogre.get_type_of_enemy())
-print(ogre.talk())
+# ogre = Ogre(20, 3)
+# print(ogre.get_type_of_enemy())
+# print(ogre.talk())
+
+# ---------------------------------------------------------------------------------------------
+
+# V6 - Polymorphism
+# Means to have many forms
+
+# Create instances of different classes
+ogre = Ogre(100, 10)
+skeleton = Enemy("Skeleton", 15, 3)
+zombie_a = Zombie(health_points=10, attack_damage=1)
+zombie_b = Zombie(health_points=12, attack_damage=1)
+
+# Create a list of heterogeneous objects
+enemies_in_the_area = [ogre, skeleton, zombie_a, zombie_b]
+
+print("--- Calling the same 'talk()' method on different objects ---")
+
+# Iterate over the list and call talk() on each object
+for enemy in enemies_in_the_area:
+    print(f"Object Type: {enemy.get_type_of_enemy()}")
+    enemy.talk()
+    print("-" * 10)
