@@ -5,6 +5,8 @@ from enemy import *
 # enemy.type_of_enemy = "Zombie"
 # print(f"{enemy.type_of_enemy} has {enemy.health_points} and {enemy.attack_damage} attack damage")
 
+# ---------------------------------------------------------------------------------------------
+
 # V2 - Abstraction
 # Abstarction means to hide implementation and only show necessary details to the user.
 # User doesn't need to know what's going under the hood.
@@ -14,6 +16,8 @@ from enemy import *
 # print(zombie.talk())
 # print(zombie.walk_forward())
 # print(zombie.attack())
+
+# ---------------------------------------------------------------------------------------------
 
 # V3 - Constructors
 # zombie = Enemy("Zombie", 10, 1)
@@ -26,6 +30,8 @@ from enemy import *
 # )
 # print("But we try not to encourage this functionality.")
 
+# ---------------------------------------------------------------------------------------------
+
 # V4 - Encapsulation
 # Bundling of Data
 # Change our public attributes to private
@@ -33,9 +39,29 @@ from enemy import *
 # Getters and setters in encapsulation help in doing this
 # Helps keep related fields and methods together
 
-zombie = Enemy("Zombie", 10, 1)
-big_zombie = Enemy("Big Zombie", 100, 10)
+# zombie = Enemy("Zombie", 10, 1)
+# big_zombie = Enemy("Big Zombie", 100, 10)
 
 
+# print(zombie.get_type_of_enemy())
+# print(big_zombie.get_type_of_enemy())
+
+# ---------------------------------------------------------------------------------------------
+
+# V5 - Inheritance
+# Process of acquiring properties from one class to another
+# Creates a hierarchy between classes
+# Method overriding is when a child class has its own method already present in parent class.
+# Self vs Super
+# self is used to refer to the current object that is created or being instantiated, while
+# super is used to refer to the parent class
+# self is used when there is a need to differentiate between the instance variables
+# and parameters with the same name, while
+# super is used to call the parent class methods or constructors
+
+from zombie import *
+
+zombie = Zombie(10, 1)
 print(zombie.get_type_of_enemy())
-print(big_zombie.get_type_of_enemy())
+print(zombie.talk())
+print(zombie.spread_disease())
