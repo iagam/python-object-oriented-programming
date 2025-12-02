@@ -74,7 +74,13 @@ from ogre import *
 # ---------------------------------------------------------------------------------------------
 
 # V6 - Polymorphism
-# Means to have many forms
+# Polymorphism means "many forms." In object-oriented programming (OOP) like Python,
+# it refers to the ability of different objects (from different classes) to respond
+# to the same method call in their own unique way.
+# In our enemy example, this means:
+# We can have a list of various enemy objects (Zombie, Enemy, etc.).
+# We can loop through the list and call the same method, like talk(), on each object.
+# Each object will execute its own version of the talk() method.
 
 # Create instances of different classes
 ogre = Ogre(100, 10)
