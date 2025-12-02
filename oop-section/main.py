@@ -100,38 +100,72 @@ from ogre import *
 #     print("-" * 10)
 
 
-# Battle Functiom
-def battle(e1: Enemy, e2: Enemy):
+# # Battle Functiom
+# def battle(e1: Enemy, e2: Enemy):
 
-    print(
-        f"{e1.get_type_of_enemy()} and {e2.get_type_of_enemy()} are ready for battle!"
-    )
+#     print(
+#         f"{e1.get_type_of_enemy()} and {e2.get_type_of_enemy()} are ready for battle!"
+#     )
+#     print("-" * 30)
+
+#     e1.talk()
+#     e2.talk()
+#     print("-" * 30)
+
+#     while e1.health_points > 0 and e2.health_points > 0:
+#         print("-" * 10)
+#         e1.special_attack()
+#         e2.special_attack()
+#         print(f"{e1.get_type_of_enemy()} generated {e1.regeneration_points} HP")
+#         print(f"{e2.get_type_of_enemy()} generated {e2.regeneration_points} HP")
+
+#         e2.attack()
+#         e1.health_points -= e2.attack_damage
+#         e1.attack()
+#         e2.health_points -= e1.attack_damage
+
+#     print("-" * 10)
+#     if e1.health_points > 0:
+#         print(f"{e1.get_type_of_enemy()} wins.")
+#     else:
+#         print(f"{e1.get_type_of_enemy()} wins.")
+
+
+# zombie = Zombie(20, 2)
+# ogre = Ogre(15, 4)
+
+# battle(zombie, ogre)
+
+
+# Hero Battle Function
+from hero import *
+
+
+def hero_battle(hero: Hero, enemy: Enemy):
+
+    print(f"Hero and {enemy.get_type_of_enemy()} are ready for battle!")
     print("-" * 30)
 
-    e1.talk()
-    e2.talk()
-    print("-" * 30)
-
-    while e1.health_points > 0 and e2.health_points > 0:
+    while hero.health_points > 0 and enemy.health_points > 0:
         print("-" * 10)
-        e1.special_attack()
-        e2.special_attack()
-        print(f"{e1.get_type_of_enemy()} generated {e1.regeneration_points} HP")
-        print(f"{e2.get_type_of_enemy()} generated {e2.regeneration_points} HP")
-
-        e2.attack()
-        e1.health_points -= e2.attack_damage
-        e1.attack()
-        e2.health_points -= e1.attack_damage
+        enemy.special_attack()
+        print(f"Hero: {hero.health_points} HP left")
+        print(f"{enemy.get_type_of_enemy()}: {enemy.health_points} HP left")
+        enemy.attack()
+        hero.health_points -= enemy.attack_damage
+        hero.attack()
+        enemy.health_points -= hero.attack_damage
 
     print("-" * 10)
-    if e1.health_points > 0:
-        print(f"{e1.get_type_of_enemy()} wins.")
+    if hero.health_points > 0:
+        print(f"Hero wins.")
     else:
-        print(f"{e1.get_type_of_enemy()} wins.")
+        print(f"{enemy.get_type_of_enemy()} wins.")
 
 
-zombie = Zombie(20, 2)
-ogre = Ogre(15, 4)
-
-battle(zombie, ogre)
+hero = Hero(20, 2)
+zombie = Zombie(15, 4)
+weapon = Weapon("Sword", 5)
+hero.weapon = weapon
+hero.equip_weapon()
+hero_battle(hero, zombie)
