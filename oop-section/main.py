@@ -16,12 +16,26 @@ from enemy import *
 # print(zombie.attack())
 
 # V3 - Constructors
+# zombie = Enemy("Zombie", 10, 1)
+# big_zombie = Enemy("Big Zombie", 100, 10)
+
+# print(zombie.attack())
+# print(big_zombie.attack())
+# print(
+#     f"If user wants to change the Zombie to Ogre they can do that by zombie.type_of_enemy = 'Ogre'"
+# )
+# print("But we try not to encourage this functionality.")
+
+# V4 - Encapsulation
+# Bundling of Data
+# Change our public attributes to private
+# Use double underscore to do that
+# Getters and setters in encapsulation help in doing this
+# Helps keep related fields and methods together
+
 zombie = Enemy("Zombie", 10, 1)
 big_zombie = Enemy("Big Zombie", 100, 10)
 
-print(zombie.attack())
-print(big_zombie.attack())
-print(
-    f"If user wants to change the Zombie to Ogre they can do that by zombie.type_of_enemy = 'Ogre'"
-)
-print("But we try not to encourage this functionality.")
+
+print(zombie.get_type_of_enemy())
+print(big_zombie.get_type_of_enemy())
