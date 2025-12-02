@@ -83,18 +83,55 @@ from ogre import *
 # Each object will execute its own version of the talk() method.
 
 # Create instances of different classes
-ogre = Ogre(100, 10)
-skeleton = Enemy("Skeleton", 15, 3)
-zombie_a = Zombie(health_points=10, attack_damage=1)
-zombie_b = Zombie(health_points=12, attack_damage=1)
+# ogre = Ogre(100, 10)
+# skeleton = Enemy("Skeleton", 15, 3)
+# zombie_a = Zombie(health_points=10, attack_damage=1)
+# zombie_b = Zombie(health_points=12, attack_damage=1)
 
-# Create a list of heterogeneous objects
-enemies_in_the_area = [ogre, skeleton, zombie_a, zombie_b]
+# # Create a list of heterogeneous objects
+# enemies_in_the_area = [ogre, skeleton, zombie_a, zombie_b]
 
-print("--- Calling the same 'talk()' method on different objects ---")
+# print("--- Calling the same 'talk()' method on different objects ---")
 
-# Iterate over the list and call talk() on each object
-for enemy in enemies_in_the_area:
-    print(f"Object Type: {enemy.get_type_of_enemy()}")
-    enemy.talk()
+# # Iterate over the list and call talk() on each object
+# for enemy in enemies_in_the_area:
+#     print(f"Object Type: {enemy.get_type_of_enemy()}")
+#     enemy.talk()
+#     print("-" * 10)
+
+
+# Battle Functiom
+def battle(e1: Enemy, e2: Enemy):
+
+    print(
+        f"{e1.get_type_of_enemy()} and {e2.get_type_of_enemy()} are ready for battle!"
+    )
+    print("-" * 30)
+
+    e1.talk()
+    e2.talk()
+    print("-" * 30)
+
+    while e1.health_points > 0 and e2.health_points > 0:
+        print("-" * 10)
+        e1.special_attack()
+        e2.special_attack()
+        print(f"{e1.get_type_of_enemy()} generated {e1.regeneration_points} HP")
+        print(f"{e2.get_type_of_enemy()} generated {e2.regeneration_points} HP")
+
+        e2.attack()
+        e1.health_points -= e2.attack_damage
+        e1.attack()
+        e2.health_points -= e1.attack_damage
+
     print("-" * 10)
+    if e1.health_points > 0:
+        print(f"{e1.get_type_of_enemy()} wins.")
+    else:
+        print(f"{e1.get_type_of_enemy()} wins.")
+
+
+zombie = Zombie(20, 2)
+ogre = Ogre(15, 4)
+
+battle(zombie, ogre)
