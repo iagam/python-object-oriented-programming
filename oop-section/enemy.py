@@ -77,7 +77,13 @@
 class Enemy:
 
     # Add parameter constructor class
-    def __init__(self, type_of_enemy: str, health_points: int, attack_damage: int):
+    def __init__(
+        self,
+        type_of_enemy: str,
+        health_points: int,
+        attack_damage: int,
+        regeneration_points: int,
+    ):
         self.__type_of_enemy = type_of_enemy
 
         # Explicit Runtime Check
@@ -93,6 +99,7 @@ class Enemy:
                 f"attack_damage must be an integer, but got {type(attack_damage).__name__}"
             )
         self.attack_damage = attack_damage
+        self.regeneration_points = regeneration_points
 
     def get_type_of_enemy(self):
         return self.__type_of_enemy
@@ -105,5 +112,9 @@ class Enemy:
 
     def attack(self):
         print(f"{self.__type_of_enemy} attacks for {self.attack_damage} damage.")
+
+    def special_attack(self):
+        print(f"{self.get_type_of_enemy()} has no special attack.")
+
 
 # ---------------------------------------------------------------------------------------------
