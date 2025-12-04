@@ -10,12 +10,4 @@ It serves as a personal learning space to explore concepts like classes, objects
 ## Goals
 - Strengthen understanding of OOP fundamentals  
 - Practice writing clean, reusable, and modular code  
-- Build a reference for future projects and learning  
-
-## Usage
-Clone the repository and open the notebooks:
-
-```bash
-git clone https://github.com/iagam/oop-learning.git
-cd oop-learning
-jupyter notebook
+- Build a reference for future projects and learning
